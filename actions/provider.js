@@ -4,15 +4,15 @@ chrome.extension.sendRequest({get: true}, function (response) {
         {exp: '.twitter.com', file: 'actions/twitter/main.js'},
     ];
 
-    if(response.import){
+    if (response.import) {
 
         chrome.extension.sendRequest({import: response.import});
 
-    }else{
+    } else {
 
         for (var i in actionProvider) {
             if (document.location.href.match(new RegExp(actionProvider[i].exp))
-            && (actionProvider[i].flag ? actionProvider[i].flag() : true)) {
+                && (actionProvider[i].flag ? actionProvider[i].flag() : true)) {
 
                 console.log('import: ' + actionProvider[i].file);
                 chrome.extension.sendRequest({import: actionProvider[i].file});
@@ -21,7 +21,7 @@ chrome.extension.sendRequest({get: true}, function (response) {
         }
 
         console.log('no task!');
-        chrome.extension.sendRequest({set : {step : 'end'}});
+        chrome.extension.sendRequest({set: {step: 'end'}});
     }
 
 });
