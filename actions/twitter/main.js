@@ -73,8 +73,6 @@ chrome.extension.sendRequest({get: true}, function (response) {
 
     })(jQuery);
 
-    console.log(jQuery);
-
     chrome.extension.sendRequest({set: {step: 'end'}});
 });
 
