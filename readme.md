@@ -10,8 +10,8 @@
 
 ### actions/config.js
 
-- set.config.title: アカウント名
-- set.config.menu: サイドメニューに並ぶチャンネル群
+- `set.config.title` アカウント名
+- `set.config.menu` サイドメニューに並ぶチャンネル群
 
 設定後、再度アイコンクリックするとすぐに反映されます
 
