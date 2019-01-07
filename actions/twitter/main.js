@@ -8,13 +8,15 @@ chrome.extension.sendRequest({get: true}, function (response) {
         $('title').text(response.config.title);
         $('head').append('<style>*{font-size: 12px !important;}</style>');
         $('header').hide();
-        $('[aria-label*=トレンド]').empty();
+        $('[aria-label*=トレンド]').remove();
+        $('[aria-label*=フッター]').remove();
 
         //asideサイドメニューを流用する
         $('aside:eq(0)').empty().css({
             backgroundColor: '#4A3A4A',
             height: window.innerHeight,
             width: '200px',
+            position: 'fixed'
         }).append(
             '<div style="color:#c3bcc2; padding:10px">' +
             '<p style="color:white; font-size:14px; font-weight:bold">' + response.config.title + '</p>'
