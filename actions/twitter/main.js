@@ -20,7 +20,7 @@ chrome.extension.sendRequest({get: true}, function (response) {
         }).append(
             '<div style="color:#c3bcc2; padding:10px">' +
             '<p style="color:white; font-size:14px; font-weight:bold">' + response.config.title + '</p>'
-            + '<p>' + response.config.menu.join('</p><p>') + '</p>'
+            + '<p># ' + response.config.menu.join('</p><p># ') + '</p>'
             + '</div>'
         );
 
